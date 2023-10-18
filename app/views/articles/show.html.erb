@@ -3,5 +3,6 @@
 <p> <%= @article.body %> </p>
 
 <ul>
-    
+    <li><%= link_to 'edit', edit_article_path(@article) %></li>
+    <li><%= link_to 'back', root_path %></li>
 </ul>

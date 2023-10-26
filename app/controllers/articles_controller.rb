@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    
+    @article = Article.new(article_params)
     if @article.save then
       redirect_to @article
     else
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -36,11 +36,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+        flash[:success] = 'Object was successfully deleted.'
+        redirect_to root_path
+    else
+        flash[:error] = 'Something went wrong'
+        redirect_to articles_url
+    end
 
-    @article.destroy
-
-    redirect_to root_path
-  end
+end
 
   private
 

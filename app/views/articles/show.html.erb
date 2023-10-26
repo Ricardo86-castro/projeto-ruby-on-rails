@@ -3,12 +3,13 @@
 <p> <%= @article.body %> </p>
 
 <ul>
+    
     <li>
         <%= link_to 'edit', edit_article_path(@article) %>
     </li>
     <li>
         <%= link_to 'destroy', article_path(@article), 
-        methods: :delete, 
+        method: :delete,
         data: { confirm: 'Are you sure?' } %>
     </li>
     <li>

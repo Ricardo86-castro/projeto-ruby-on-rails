@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Loja</title>
+    <title>Primeiro projeto em ruby</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+    
+    <%= javascript_importmap_tags%>
+    <%= link_to stylesheet_link_tag 'style', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    
+    
     <%= yield %>
   </body>
 </html>
